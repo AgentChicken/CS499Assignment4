@@ -1,6 +1,7 @@
 from __future__ import print_function
 from yahoo_finance import *
 from elasticsearch import *
+from datetime import datetime
 import time
 
 amazon = Share("AMZN")
@@ -25,7 +26,7 @@ def main(counter):
             'price': stocks[i].get_price(),
             'change': stocks[i].get_change(),
             'tradetime': stocks[i].get_trade_datetime(),
-            'time': time.time()
+            'time': datetime.now()
         })
         counter += 1
     time.sleep(30)
