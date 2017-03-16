@@ -24,7 +24,8 @@ def main(counter):
             'name': stocks[i].get_name(),
             'price': stocks[i].get_price(),
             'change': stocks[i].get_change(),
-            'time': stocks[i].get_trade_datetime()
+            'tradetime': stocks[i].get_trade_datetime(),
+            'time': time.time()
         })
         counter += 1
     time.sleep(30)
