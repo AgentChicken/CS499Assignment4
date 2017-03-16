@@ -29,6 +29,7 @@ def main(counter):
             'retrievetime': datetime.now()
         })
         counter += 1
+        stocks[i].refresh()
     time.sleep(30)
     main(counter)
 
