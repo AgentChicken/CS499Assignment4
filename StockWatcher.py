@@ -19,24 +19,14 @@ counter = 1
 
 def main(counter):
     for i in range(stocks.__len__()):
-        '''
-        es = Elasticsearch(['http://search-cs499assignment4-u5u7mpa3siblnm74q2nzn2upia.us-west-2.es.amazonaws.com:80'])
+        es = Elasticsearch(['http://search-cs499assignment4-1-jmjogfowz5kwm4lwi5zsoo2afi.us-west-2.es.amazonaws.com:80'])
         es.index(index='stockprices', doc_type='prices', id=counter, body={
-            'symbol': stocksymbols[i],
-            'name': stocks[i].get_name(),
-            'price': stocks[i].get_price(),
-            'change': stocks[i].get_change(),
-            'tradetime': stocks[i].get_trade_datetime(),
-            'time': datetime.now()
-        })
-        '''
-        print({
             'symbol': stocksymbols[i],
             'name': stocks[i].get_name(),
             'price': float(stocks[i].get_price()),
             'change': float(stocks[i].get_change()),
             'tradetime': stocks[i].get_trade_datetime(),
-            'time': datetime.now()
+            'retrievetime': datetime.now()
         })
         counter += 1
     time.sleep(30)
